@@ -1,1 +1,1 @@
-# JS-boilyP
+# Cookie Blocker øvelse
