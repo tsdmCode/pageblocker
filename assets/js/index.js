@@ -2,11 +2,12 @@ const all = document.getElementById('all');
 const promotional = document.getElementById('promotional');
 const needed = document.getElementById('needed');
 const main = document.getElementsByTagName('main')[0];
-document.addEventListener('DOMContentLoaded', function () {
+
+document.addEventListener('DOMContentLoaded', () => {
   const dialog = document.getElementById('dialog');
   const yesButton = document.getElementById('consent');
   const noButton = document.getElementById('noConsent');
-  localStorage.clear();
+  //   localStorage.clear();
   if (localStorage.getItem('consentGiven') === 'true') {
     console.log('got here!');
     return;
@@ -18,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     e.preventDefault();
 
     if (!all.checked && !promotional.checked && !needed.checked) {
-      redirect();
+      alert('Click en af dem, tak!');
     } else {
       localStorage.setItem('consentGiven', 'true');
       const checkBoxes = document.querySelectorAll('.inputCheck');
