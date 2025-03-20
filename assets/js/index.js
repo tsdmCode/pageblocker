@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const dialog = document.getElementById('dialog');
   const yesButton = document.getElementById('consent');
   const noButton = document.getElementById('noConsent');
-  //   localStorage.clear();
+  localStorage.clear(); // turn this on if you need to debug
   if (localStorage.getItem('consentGiven') === 'true') {
     console.log('got here!');
     return;
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     redirect();
   });
-  function redirect() {
+  const redirect = () => {
     window.location.href = 'https://en.wikipedia.org/wiki/Cookie_monster';
-  }
+  };
 });
