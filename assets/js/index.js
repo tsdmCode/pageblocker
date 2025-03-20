@@ -1,7 +1,7 @@
 const all = document.getElementById('all');
 const promotional = document.getElementById('promotional');
 const needed = document.getElementById('needed');
-
+const main = document.getElementsByTagName('main')[0];
 document.addEventListener('DOMContentLoaded', function () {
   const dialog = document.getElementById('dialog');
   const yesButton = document.getElementById('consent');
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     dialog.showModal();
   }
 
-  yesButton.addEventListener('click', function (e) {
+  yesButton.addEventListener('click', (e) => {
     e.preventDefault();
 
     if (!all.checked && !promotional.checked && !needed.checked) {
@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
           console.log(i.id);
         }
       });
+      main.style.filter = 'blur(0px)';
       dialog.close();
     }
   });
