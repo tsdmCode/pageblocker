@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   localStorage.clear(); // turn this on if you need to debug
   if (localStorage.getItem('consentGiven') === 'true') {
     console.log('got here!');
+    main.style.filter = 'blur(0px)';
     return;
   } else {
     dialog.showModal();
