@@ -7,8 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const dialog = document.getElementById('dialog');
   const yesButton = document.getElementById('consent');
   const noButton = document.getElementById('noConsent');
-  localStorage.clear(); // turn this on if you need to debug
+  // localStorage.clear(); // turn this on if you need to debug
   if (localStorage.getItem('consentGiven') === 'true') {
+    //gets the cookie
     console.log('got here!');
     main.style.filter = 'blur(0px)';
     return;
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!all.checked && !promotional.checked && !needed.checked) {
       alert('Click en af dem, tak!');
     } else {
-      localStorage.setItem('consentGiven', 'true');
+      localStorage.setItem('consentGiven', 'true'); //sets cookie
       const checkBoxes = document.querySelectorAll('.inputCheck');
       checkBoxes.forEach((i) => {
         if (i.checked) {
